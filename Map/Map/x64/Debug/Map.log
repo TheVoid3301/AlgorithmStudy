@@ -1,0 +1,10 @@
+﻿  Main.cpp
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(48,75): warning C4805: “!=”: 在操作中将类型“_Ty”与类型“bool”混合不安全
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(48,75): warning C4805:         with
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(48,75): warning C4805:         [
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(48,75): warning C4805:             _Ty=int
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(48,75): warning C4805:         ]
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(97,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(142,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\TheVoid\Desktop\数据结构\luogu\Map\Map\Main.cpp(327,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Map.vcxproj -> C:\Users\TheVoid\Desktop\数据结构\luogu\Map\x64\Debug\Map.exe
