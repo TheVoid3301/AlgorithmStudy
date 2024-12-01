@@ -9,7 +9,10 @@
         "ranges": "cpp",
         "span": "cpp",
         "stacktrace": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "list": "cpp"
     },
     "git.ignoreLimitWarning": true
 }
