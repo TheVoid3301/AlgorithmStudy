@@ -12,7 +12,12 @@
         "regex": "cpp",
         "deque": "cpp",
         "string": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "*.tcc": "cpp",
+        "unordered_set": "cpp",
+        "expected": "cpp",
+        "optional": "cpp",
+        "variant": "cpp"
     },
     "git.ignoreLimitWarning": true
 }
