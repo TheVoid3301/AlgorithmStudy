@@ -72,3 +72,46 @@
 //   }
 //   return 0;
 // }
+// 方差是描述数据波动的数学量
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+int k,t;
+long long a[100005], b[100005], s[100005], sq[100005];
+
+inline double pow(double x) { return x*x; }
+
+bool check(int m) {
+  memcpy(b, a, sizeof(long long)*(m+1));
+  sort(b+1, b+1+m);
+  for (int i=1; i<=m; i++)
+    s[i] = s[i-1]+b[i], sq[i] = sq[i-1]+b[i]*b[i];
+  for (int i=k; i<=m; i++)
+    if (double(sq[i]-sq[i-k])/k - pow(double(s[i]-s[i-k])/k) < t)
+      return true;
+  return false;
+}
+
+int get(int l, int r) {
+  int ans = -1;
+  while (l <= r) {
+    int m = (l+r)/2;
+    if (check(m))
+      r = (ans=m)-1;
+    else
+      l = m+1;
+  }
+  return ans;
+}
+
+int main() {
+  int n;
+  cin>>n>>k>>t;
+  for (int i=1; i<=n; i++)
+    cin>>a[i];
+  cout<<get(k, n)<<'\n';
+
+  return 0;
+}
