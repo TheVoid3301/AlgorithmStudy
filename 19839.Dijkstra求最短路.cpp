@@ -1,74 +1,58 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <climits>
 using namespace std;
-#define inf INT_MAX
-#define maxn 1010
-int graph[maxn][maxn];
-void initEdges(int n)
+int n;
+long long m;
+vector<vector<int>> road(501, vector<int>(501, INT_MAX));
+int visit[501];
+vector<int> dist(501, INT_MAX);
+
+void dijkstra(int now)
 {
-    for(int i=0;i<n;++i){
-        for(int j=0;j<n;++j){
-            graph[i][j]=inf;
-        }
-    }
-}
-void addEdge(int u, int v ,int w)
-{
-    if(w<graph[u][v])
-    graph[u][v]=w;
-}
-void dijkstra(int n,int s,int dist[maxn])
-{
-  bool visited[maxn];
-  for(int i=0;i<n;i++)
+  for(int i = 1; i <= n; ++i)
   {
-    visited[i]=false;
-    dist[i]=inf;
-  }
-  dist[s]=0;
-    while(true)
-    {    
-    int Mindist=inf,MinIndex;
-        for(int i=0;i<n;i++)
-        {
-            if(visited[i]==true)
-            continue;
-            if(Mindist>dist[i]||Mindist==inf)
-            {
-                Mindist=dist[i];
-                MinIndex=i;
-            }
-        }
-        if(Mindist==inf)
-        break;
-        visited[MinIndex]=true;
-        for(int i=0;i<n;i++)
-            {
-                if(visited[i])
-                continue;
-                int dis=graph[MinIndex][i];
-                if(dis==inf){
-                    continue;
-                }
-                if(dist[i]==inf||dist[MinIndex]+dis<dist[i]){
-                    dist[i]=dis+dist[MinIndex];
-                }
-            }
+    if(road[now][i] != INT_MAX && visit[i] != 1)
+    {
+      dist[i] = min(dist[i], dist[now] + road[now][i]);
     }
+  }
+  int min_d = INT_MAX, j = 0;
+  for(int i = 1; i <= n; ++i)
+  {
+    if(min_d > dist[i] && visit[i] != 1)
+    {
+      min_d = dist[i];
+      j = i;
+    }
+  }
+  visit[j] = 1;
+  if(j != 0)
+  {
+    dijkstra(j);
+  }
 }
+
 int main()
 {
-  int n,m;
-  cin>>n>>m;
-  int u,v,w;
-  initEdges(n);
-  for(int i=0;i<m;i++){
-    cin>>u>>v>>w;
-    addEdge(u-1,v-1,w);//初始化
+  // 请在此输入您的代码
+  int a, b, c;
+  cin >> n >> m;
+  for(long long i = 0; i < m; ++i)
+  {
+    cin >> a >> b >> c;
+    road[a][b] = min(road[a][b], c);
   }
-  int dist[maxn];
-  dijkstra(n,0,dist);
-  if(dist[n-1]==inf)
-  cout<<-1;
+  visit[1] = 1;
+  dist[1] = 0;
+  dijkstra(1);
+  if(dist[n] == INT_MAX)
+  {
+    cout << -1;
+  }
   else
-  cout<<dist[n-1];
+  {
+    cout << dist[n];
+  }
+  return 0;
 }
