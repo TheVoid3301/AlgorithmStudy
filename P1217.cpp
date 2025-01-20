@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <math.h>
 using namespace std;
 
 bool check (string s)
@@ -15,7 +16,7 @@ bool check (string s)
 }
 bool checksu (int k)
 {
-    for(int i = 2; i <= k / 2; ++i)
+    for(int i = 2; i <= sqrt(k); ++i)
     {
         if (k % i == 0)
         {
