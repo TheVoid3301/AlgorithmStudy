@@ -1,15 +1,26 @@
 #include <iostream>
-#include <string>
 #include <math.h>
+#include <vector>
 using namespace std;
-
-bool check (string s)
+vector<int> wei(10, 0);
+int len = 0;
+bool check (int i)
 {
-    for (int i = 0; i < s.size() / 2; ++i)
+    while(i > 0)
     {
-        if (s[i] != s[s.size() - 1 - i])
+        wei[len] = i % 10;
+        i /= 10;
+        ++len;
+    }
+    if(len % 2 == 0)
+    {
+        return false;
+    }
+    for(int j = 0; j < len / 2; ++j)
+    {
+        if(wei[j] != wei[len - j - 1])
         {
-            return false; 
+            return false;
         }
     }
     return true;
@@ -28,7 +39,6 @@ bool checksu (int k)
 int main ()
 {
     int a, b;
-    string s;
     cin >> a >> b;
     for (int i = a; i <= b; ++i)
     {
@@ -36,12 +46,16 @@ int main ()
         {
             continue;
         }
-        s = to_string(i);
-        if (check(s))
+        if(i == 11)
+        {
+            cout << 11 << endl;
+        }
+        len = 0;
+        if (check(i))
         {
             if (checksu(i))
             {
-                cout << s << endl;
+                cout << i << endl;
             }
         }
     }
