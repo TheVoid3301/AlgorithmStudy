@@ -16,7 +16,7 @@ int main()
 {
     int n, k = 2;
     cin >> n;
-    while (n != 1)
+    while (1)
     {
         while (n % k != 0)
         {
@@ -26,8 +26,8 @@ int main()
                 ++k;
             }
         }
-        n /= k;
+        cout << n / k;
+        break;
     }
-    cout << k;
     return 0;
 }
