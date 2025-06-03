@@ -53,7 +53,6 @@ void solve() {
 
 
 int main() {
-    std::cout << "dasd";
     int T;
     cin >> T;
     while (T--) {
