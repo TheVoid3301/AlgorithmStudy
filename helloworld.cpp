@@ -54,6 +54,7 @@ void solve() {
 
 int main() {
     std::cout << "dasd";
+    std::cout.flush();
     int T;
     cin >> T;
     while (T--) {
