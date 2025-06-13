@@ -32,5 +32,39 @@ public:
     }
 };
 
+
+//dp版本
+class Solution {
+public:
+    int minimizeMax(vector<int>& nums, int p) {
+        sort(nums.begin(), nums.end());
+        auto check = [&](int mx) -> bool {
+            vector<int> dp(nums.size(), 0);
+            if (nums[1] - nums[0] <= mx) {
+                dp[1] = 1;
+            }
+            for (int i = 2; i < nums.size(); i++) {
+                if (nums[i] - nums[i - 1] <= mx) {
+                    dp[i] = max(dp[i - 2] + 1, dp[i - 1]);
+                } else {
+                    dp[i] = dp[i - 1];
+                }
+            }
+            return dp[nums.size() - 1] >= p;
+        };
+        int left = 0, right = nums.back() - nums[0];
+        while (left < right) {
+            int mid = (left + right) >> 1;
+            if (check(mid)) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+};
+
+
 // @lc code=end
 
