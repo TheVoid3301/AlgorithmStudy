@@ -50,7 +50,7 @@ public:
         }
         return (ans - g[k - 1] + mod) % mod;
     }
-
+                                                                                                                                                                                                
 private:
     static const int mod = 1000000007;
 };
