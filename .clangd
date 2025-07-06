@@ -1,0 +1,4 @@
+CompileFlags:
+  Add: 
+    - "-I D:\\CodeNeed\\LLVM\\include"
+    - "-I D:\\CodeNeed\\LLVM\\lib\\clang\\18\\include"
