@@ -2,5 +2,9 @@
     "files.associations": {
         "string": "cpp",
         "string_view": "cpp"
-    }
+    },
+    // "clangd.path": "D:\\CodeNeed\\LLVM\\bin",
+    "clangd.arguments": [
+    ],
+    "C_Cpp.intelliSenseEngine": "Disabled"
 }

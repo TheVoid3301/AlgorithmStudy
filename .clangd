@@ -1,3 +1,9 @@
+If:
+  PathMatch: [.*\.cpp, .*\.hpp, .*\.cc]
+
 CompileFlags:
-  Add: 
-    - "-I D:\\CodeNeed\\LLVM\\lib\\clang\\18\\include"
+  Add: [
+      "-std=c++17",
+      "-nostdinc++",
+      "-ID:\\CodeNeed\\LLVM\\lib\\clang\\18\\include",
+    ]
