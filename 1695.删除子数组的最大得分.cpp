@@ -1,4 +1,12 @@
 /*
+ * @Description: 
+ * @Auther: thevoid3301
+ * @Date: 2025-07-22 00:36:33
+ * @LastEditors: thevoid3301
+ * @LastEditTime: 2025-07-22 00:36:38
+ * @FilePath: \luogu\1695.删除子数组的最大得分.cpp
+ */
+/*
  * @lc app=leetcode.cn id=1695 lang=cpp
  *
  * [1695] 删除子数组的最大得分
