@@ -1,0 +1,7 @@
+*.exe
+*.clangd
+*.out
+/.cph
+/.idea
+/.vscode
+/Map
