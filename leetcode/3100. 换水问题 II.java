@@ -1,0 +1,16 @@
+class Solution {
+    public int maxBottlesDrunk(int numBottles, int numExchange) {
+        int res = 0;
+        while (numBottles > 0) {
+            if (numBottles >= numExchange) {
+                res += numExchange;
+                numBottles = numBottles - numExchange + 1;
+                numExchange += 1;
+            } else {
+                res += numBottles;
+                break;
+            }
+        }
+        return res;
+    }
+}
